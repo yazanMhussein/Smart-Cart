@@ -7,21 +7,21 @@ using static SmartCartApplication.ShoppingCartApplication.Product;
 
 namespace SmartCartApplication.ShoppingCartApplication
 {
-    public class GroceryStore
+    public class ElectronicsStore
     {
         private List<ProductSetup> products;
 
-        public GroceryStore(int numberOfProducts)
+        public ElectronicsStore(int numberOfProducts)
         {
             products = new List<ProductSetup>();
             for (int i = 0; i < numberOfProducts; i++)
             {
-                products.Add(ProductGenerator.GenerateProduct(ProductCategory.Food));
+                products.Add(ProductGenerator.GenerateProduct(ProductCategory.Electronics));
             }
         }
         public void DisplayProducts()
         {
-            Console.WriteLine("Available products in Grocery Store:");
+            Console.WriteLine("Available products in Electronics Store:");
             foreach (var product in products)
             {
                 Console.WriteLine(product);

@@ -6,7 +6,34 @@ using System.Threading.Tasks;
 
 namespace SmartCartApplication.ShoppingCartApplication
 {
-    internal class ShoppingCart
+    public class ShoppingCart
     {
+        private List<Product.ProductSetup> productsItems;
+
+        public ShoppingCart()
+        {
+            productsItems = new List<Product.ProductSetup>();
+        }
+
+        public void AddproductsItems(Product.ProductSetup product)
+        {
+            productsItems.Add(product);
+        }
+
+        public void RemoveproductsItems(Product.ProductSetup product)
+        {
+            productsItems.Remove(product);
+        }
+
+        public List<Product.ProductSetup> GetproductsItems()
+        {
+            return productsItems;
+        }
+
+        public decimal GetTotalCost()
+        {
+            return productsItems.Sum(productItem => productItem.Price);
+        }
     }
 }
+
